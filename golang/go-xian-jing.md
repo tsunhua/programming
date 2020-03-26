@@ -45,3 +45,34 @@ for _, v := range arr {
 
 ForRange 循环语句中的第一个值为 key，第二个值才是 value，切记。
 
+{% embed url="https://studygolang.com/articles/9701" %}
+
+{% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
+
+
+
+## 案例3：值传递还是引用传递
+
+{% embed url="https://learnku.com/docs/the-way-to-go/function-parameters-and-return-values/3600" %}
+
+```text
+func main() {
+   var v Hello
+   change2(&v)
+   fmt.Print(v)
+}
+
+type Hello struct{
+	name string
+}
+
+func change(v interface{}){
+   v = Hello{ name:"122"}
+}
+
+func change2(v interface{}){
+	a := v.(*Hello)
+	a.name = "123"
+}
+```
+
