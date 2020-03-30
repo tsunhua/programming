@@ -187,6 +187,92 @@ func main() {
 1 2 3
 ```
 
+### 局部变量同返回值命名相同时会报错
+
+报错内容：err is shadowed during return
+
+反例：
+
+```text
+
+func main() {
+	err := Foo()
+	if err != nil {
+		println(err.Error())
+	}
+}
+
+func Foo() (err error) {
+	if err := Bar(); err != nil {
+		return
+	}
+	return
+}
+
+func Bar() error {
+	return errors.New("A Error")
+}
+```
+
+正例：
+
+```text
+func main() {
+	err := Foo()
+	if err != nil {
+		println(err.Error())
+	}
+}
+
+func Foo() (err error) {
+	if err = Bar(); err != nil {
+		return
+	}
+	return
+}
+
+func Bar() error {
+	return errors.New("A Error")
+}
+
+```
+
+## 异常
+
+### recover 必须在 defer 函数中运行
+
+反例：
+
+```text
+func main() {
+    recover()
+    panic(1)
+}
+
+func main() {
+    defer recover()
+    panic(1)
+}
+
+func main() {
+    defer func() {
+        func() { recover() }()
+    }()
+    panic(1)
+}
+```
+
+正例：
+
+```text
+func main() {
+    defer func() {
+        recover()
+    }()
+    panic(1)
+}
+```
+
 ## 参考
 
 {% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
