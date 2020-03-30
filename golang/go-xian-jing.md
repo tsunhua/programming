@@ -49,8 +49,6 @@ ForRange 循环语句中的第一个值为 key，第二个值才是 value，切�
 
 {% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
 
-
-
 ## 案例3：值传递还是引用传递
 
 {% embed url="https://learnku.com/docs/the-way-to-go/function-parameters-and-return-values/3600" %}
