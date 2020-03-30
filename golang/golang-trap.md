@@ -6,13 +6,13 @@
 
 反例：
 
-```text
+```go
 s := string(97) // s == "a"
 ```
 
 正例：
 
-```text
+```go
 // Integer to ASCII
 s := strconv.Itoa(97) // s == "97"
 s := strconv.FormatInt(97, 10) // s == "97" (decimal)
@@ -33,7 +33,7 @@ s := fmt.Sprintf("%d", 97)
 
 切片会导致整个底层数组被锁定，底层数组无法释放内存。如果底层数组较大会对内存产生很大的压力。
 
-```text
+```go
 func main() {
     headerMap := make(map[string][]byte)
 
@@ -52,7 +52,7 @@ func main() {
 
 解决的方法是将结果克隆一份，这样可以释放底层的数组：
 
-```text
+```go
 func main() {
     headerMap := make(map[string][]byte)
 
@@ -75,7 +75,7 @@ func main() {
 
 反例：
 
-```text
+```go
 arr := []string{"a", "b", "c"}
 for v := range arr {
 		println(v)
@@ -84,7 +84,7 @@ for v := range arr {
 
 正例：
 
-```text
+```go
 arr := []string{"a", "b", "c"}
 for _, v := range arr {
 		println(v)
@@ -97,7 +97,7 @@ for _, v := range arr {
 
 反例：
 
-```text
+```go
 slice := []int{0, 1, 2, 3}
 myMap := make(map[int]*int)
 
@@ -108,7 +108,7 @@ for index, value := range slice {
 
 正例：
 
-```text
+```go
 slice := []int{0, 1, 2, 3}
 myMap := make(map[int]*int)
 
@@ -128,7 +128,7 @@ for index, value := range slice {
 
 反例：
 
-```text
+```go
 func main() {
     m := map[string]string{
         "1": "1",
@@ -144,7 +144,7 @@ func main() {
 
 正例：
 
-```text
+```go
 func main() {
     ks := []string{"1","2","3"}
     m := map[string]string{
@@ -165,7 +165,7 @@ func main() {
 
 反例：
 
-```text
+```go
 func main() {
    var v Hello
    change(&v)
@@ -183,7 +183,7 @@ func change(v interface{}){
 
 正例：
 
-```text
+```go
 func main() {
    var v Hello
    change(&v)
@@ -213,7 +213,7 @@ func change(v interface{}){
 
 当参数的可变参数是空接口类型时，传入空接口的切片时需要注意参数展开的问题。
 
-```text
+```go
 func main() {
     var a = []interface{}{1, 2, 3}
 
@@ -235,8 +235,7 @@ func main() {
 
 反例：
 
-```text
-
+```go
 func main() {
 	err := Foo()
 	if err != nil {
@@ -258,7 +257,7 @@ func Bar() error {
 
 正例：
 
-```text
+```go
 func main() {
 	err := Foo()
 	if err != nil {
@@ -285,17 +284,19 @@ func Bar() error {
 
 反例：
 
-```text
+```go
 func main() {
     recover()
     panic(1)
 }
 
+// 或
 func main() {
     defer recover()
     panic(1)
 }
 
+// 或
 func main() {
     defer func() {
         func() { recover() }()
@@ -306,7 +307,7 @@ func main() {
 
 正例：
 
-```text
+```go
 func main() {
     defer func() {
         recover()
@@ -319,7 +320,7 @@ func main() {
 
 反例：
 
-```text
+```go
 func main() {
 	var files = []string{"file1", "file2"}
 	for _, file := range files {
@@ -336,7 +337,7 @@ func main() {
 
 正例：
 
-```text
+```go
 func main() {
 	var files = []string{"file1", "file2"}
 	for _, file := range files {
@@ -378,7 +379,7 @@ func handleFile(file string) {
 
 反例：
 
-```text
+```go
 func main() {
     go println("Hello")
 }

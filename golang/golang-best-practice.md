@@ -2,7 +2,7 @@
 
 ### 使用闭包归总错误检测代码
 
-```text
+```go
 func main() {
 	user := User{
 		Name:  "Bob",
