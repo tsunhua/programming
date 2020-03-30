@@ -237,7 +237,7 @@ func Bar() error {
 
 ```
 
-## 异常
+## defer
 
 ### recover 必须在 defer 函数中运行
 
@@ -272,6 +272,63 @@ func main() {
     panic(1)
 }
 ```
+
+### defer 在循环中无效
+
+反例：
+
+```text
+func main() {
+	var files = []string{"file1", "file2"}
+	for _, file := range files {
+		var f *os.File
+		var err error
+		if f, err = os.Open(file); err != nil {
+			return
+		}
+		defer f.Close()
+		// 省略一些文件操作
+	}
+}
+```
+
+正例：
+
+```text
+func main() {
+	var files = []string{"file1", "file2"}
+	for _, file := range files {
+		var f *os.File
+		var err error
+		if f, err = os.Open(file); err != nil {
+			return
+		}
+		// 省略一些文件操作
+		f.Close()
+	}
+}
+
+// 或者拆分成函数
+	
+func main() {
+	var files = []string{"file1", "file2"}
+	for _, file := range files {
+		handleFile(file)
+	}
+}
+
+func handleFile(file string) {
+	var f *os.File
+	var err error
+	if f, err = os.Open(file); err != nil {
+		return
+	}
+	defer f.Close()
+}
+
+```
+
+要点： defer 在循环中无效，不要在循环中使用 defer。
 
 ## 发布
 
