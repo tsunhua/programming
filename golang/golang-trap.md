@@ -1,6 +1,6 @@
 # Go 编程之陷阱
 
-## 类型（type）
+## 值类型
 
 ### 数字与字符串不能直接互转
 
@@ -26,6 +26,48 @@ s := fmt.Sprintf("%d", 97)
 参考：
 
 {% embed url="https://yourbasic.org/golang/convert-int-to-string/" %}
+
+## 切片
+
+### 切片会导致整个底层数组被锁定
+
+切片会导致整个底层数组被锁定，底层数组无法释放内存。如果底层数组较大会对内存产生很大的压力。
+
+```text
+func main() {
+    headerMap := make(map[string][]byte)
+
+    for i := 0; i < 5; i++ {
+        name := "/path/to/file"
+        data, err := ioutil.ReadFile(name)
+        if err != nil {
+            log.Fatal(err)
+        }
+        headerMap[name] = data[:1]
+    }
+
+    // do some thing
+}
+```
+
+解决的方法是将结果克隆一份，这样可以释放底层的数组：
+
+```text
+func main() {
+    headerMap := make(map[string][]byte)
+
+    for i := 0; i < 5; i++ {
+        name := "/path/to/file"
+        data, err := ioutil.ReadFile(name)
+        if err != nil {
+            log.Fatal(err)
+        }
+        headerMap[name] = append([]byte{}, data[:1]...)
+    }
+
+    // do some thing
+}
+```
 
 ## 迭代
 
@@ -117,7 +159,7 @@ func main() {
 }
 ```
 
-## 函数（Function）
+## 函数
 
 ### 函数参数中 interface 是引用传递
 
