@@ -273,6 +273,16 @@ func main() {
 }
 ```
 
+## 发布
+
+### 二进制文件不包含静态资源
+
+使用 `go build`生成的二进制文件并不包含静态资源，如项目中使用了静态资源，而打包后在他处执行却没有附带静态资源会报错。如需要将静态资源打包进二进制文件里，可参考以下几种实现：
+
+1. go-bindata
+2. go.rice
+3. esc
+
 ## 参考
 
 {% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
