@@ -1,6 +1,8 @@
 # Go 编程之陷阱
 
-## 案例1 ：数字字符串化
+## 类型（type）
+
+### 数字与字符串不能直接互转
 
 反例：
 
@@ -21,9 +23,13 @@ s := fmt.Sprintf("%d", 97)
 
 同理，字符串转化为数字也要用 `strconv` 这个包内的工具才行。
 
-[了解更多](https://yourbasic.org/golang/convert-int-to-string/)
+参考：
 
-## 案例 2：ForRange 迭代
+{% embed url="https://yourbasic.org/golang/convert-int-to-string/" %}
+
+## 迭代
+
+### ForRange 迭代返回值先 index/key 后 value
 
 反例：
 
@@ -43,20 +49,84 @@ for _, v := range arr {
 }
 ```
 
-ForRange 循环语句中的第一个值为 key，第二个值才是 value，切记。
+要点：ForRange 循环语句中的第一个值为 key，第二个值才是 value，切记。
+
+### ForRange 迭代中  value 地址不变
+
+反例：
+
+```text
+slice := []int{0, 1, 2, 3}
+myMap := make(map[int]*int)
+
+for index, value := range slice {
+    myMap[index] = &value
+}
+```
+
+正例：
+
+```text
+slice := []int{0, 1, 2, 3}
+myMap := make(map[int]*int)
+
+for index, value := range slice {
+    num := value
+    myMap[index] = num
+}
+```
+
+要点：ForRange 会使用同一块内存去接收循环中的 value 副本，因此迭代返回的 value 地址不变，值随迭代而变。
+
+参考：
 
 {% embed url="https://studygolang.com/articles/9701" %}
 
-{% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
+### map 遍历顺序不固定
 
-## 案例3：值传递还是引用传递
+反例：
 
-{% embed url="https://learnku.com/docs/the-way-to-go/function-parameters-and-return-values/3600" %}
+```text
+func main() {
+    m := map[string]string{
+        "1": "1",
+        "2": "2",
+        "3": "3",
+    }
+
+    for k, v := range m {
+        println(k, v)
+    }
+}
+```
+
+正例：
+
+```text
+func main() {
+    ks := []string{"1","2","3"}
+    m := map[string]string{
+        "1": "1",
+        "2": "2",
+        "3": "3",
+    }
+
+    for _,k := range ks {
+        println(k, m[k])
+    }
+}
+```
+
+## 函数（Function）
+
+### 函数参数中 interface 是引用传递
+
+反例：
 
 ```text
 func main() {
    var v Hello
-   change2(&v)
+   change(&v)
    fmt.Print(v)
 }
 
@@ -65,16 +135,39 @@ type Hello struct{
 }
 
 func change(v interface{}){
-   v = Hello{ name:"122"}
-}
-
-func change2(v interface{}){
-	a := v.(*Hello)
-	a.name = "123"
+   v = Hello{ name:"Bob"}
 }
 ```
 
-## 案例 4：可变参数是空接口类型
+正例：
+
+```text
+func main() {
+   var v Hello
+   change(&v)
+   fmt.Print(v)
+}
+
+type Hello struct{
+	name string
+}
+
+func change(v interface{}){
+	a := v.(*Hello)
+	a.name = "Bob"
+}
+```
+
+要点：
+
+1. 在函数调用时，像**切片**（slice）、**字典**（map）、**接口**（interface）、**通道**（channel）这样的引用类型都是默认使用**引用传递**（即使没有显式的指出指针）。而数组之类的是值传递。
+2. 不建议使用既是传入参数也是传出参数的参数，建议分开，最好是不使用传出参数，而是直接返回值。
+
+参考：
+
+{% embed url="https://learnku.com/docs/the-way-to-go/function-parameters-and-return-values/3600" %}
+
+### 可变参数是空接口类型
 
 当参数的可变参数是空接口类型时，传入空接口的切片时需要注意参数展开的问题。
 
@@ -93,4 +186,8 @@ func main() {
 [1 2 3]
 1 2 3
 ```
+
+## 参考
+
+{% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
 
