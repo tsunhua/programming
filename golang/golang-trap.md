@@ -330,6 +330,20 @@ func handleFile(file string) {
 
 要点： defer 在循环中无效，不要在循环中使用 defer。
 
+## Go 协程（Go Routine）
+
+处于后台的 Go 协程无法保证完成任务。
+
+反例：
+
+```text
+func main() {
+    go println("Hello")
+}
+```
+
+要点：Go 协程会在 main 退出时被停止，无法保证其完成并正常退出。
+
 ## 发布
 
 ### 二进制文件不包含静态资源
