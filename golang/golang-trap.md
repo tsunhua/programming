@@ -397,6 +397,10 @@ func main() {
 2. go.rice
 3. esc
 
+## 另外
+
+1. 没有泛型
+
 ## 参考
 
 {% embed url="https://chai2010.cn/advanced-go-programming-book/appendix/appendix-a-trap.html" %}
