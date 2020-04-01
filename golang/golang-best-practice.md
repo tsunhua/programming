@@ -1,5 +1,48 @@
 # Go 编程之最佳实践
 
+### 使用逗号 ok 模式
+
+```go
+// 普通模式
+func test() error {
+    //…
+    value, err := pack1.Func1(param1)
+    if err != nil {
+        //…
+        return err
+    }
+    //…
+    return nil
+}
+
+// 逗号 ok 模式
+func test() error {
+    //…
+    if value, err := pack1.Func1(param1); err != nil {
+        //…
+        return err
+    }
+    //…
+    return nil
+}
+```
+
+### 使用 defer 确保最后调用
+
+```go
+// 关闭文件
+func test() {
+  // open a file f
+  defer f.Close()
+}
+
+// 解锁
+func test() {
+  mu.Lock()
+  defer mu.Unlock()
+}
+```
+
 ### 使用闭包归总错误检测代码
 
 ```go
@@ -18,7 +61,7 @@ type User struct {
 	Age   int
 	IsVip bool
 }
-
+// 未使用闭包归总错误检测代码
 func watchVipMovie(user User) (url string, err error) {
 	if !user.IsVip {
 		err = errors.New("must be vip")
@@ -32,6 +75,7 @@ func watchVipMovie(user User) (url string, err error) {
 	return
 }
 
+// 使用闭包归总错误检测代码
 func watchVipMovie2(user User) (url string, err error) {
 	err = func() error {
 		if !user.IsVip {
