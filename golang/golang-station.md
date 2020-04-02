@@ -7,7 +7,7 @@
 | Goland | 最好用的 Go 集成编程工具，没有之一 |
 | The Go Playground | Go 练习场，在线运行 Go 代码 [https://play.golang.org/](https://play.golang.org/) |
 
-## 站点
+## 网站
 
 | 名称 | 地址 |
 | :--- | :--- |
