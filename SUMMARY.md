@@ -18,6 +18,8 @@
 * [Kubernetes 服务发现](cloud-native/kubernetes-fu-wu-fa-xian.md)
 * [Amazon EKS](cloud-native/amazon-eks.md)
 * [Istio](cloud-native/istio.md)
+* [Istio 中使用 EnvoyFilter 注入国家二字码的实现](cloud-native/istio-zhong-shi-yong-envoyfilter-zhu-ru-guo-jia-er-zi-ma-de-shi-xian.md)
+* [Kubernetes 运维指南](cloud-native/kubernetes-yun-wei-zhi-nan.md)
 
 ## 持续集成和交付 <a id="ci-cd"></a>
 
