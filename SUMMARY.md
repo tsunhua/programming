@@ -15,4 +15,11 @@
 * [云原生之加油站](cloud-native/cloud-native-station.md)
 * [Docker](cloud-native/docker.md)
 * [Kubernetes](cloud-native/hello-kubernetes.md)
+* [Kubernetes 服务发现](cloud-native/kubernetes-fu-wu-fa-xian.md)
+* [Amazon EKS](cloud-native/amazon-eks.md)
+* [Istio](cloud-native/istio.md)
+
+## 持续集成和交付 <a id="ci-cd"></a>
+
+* [Jenkins](ci-cd/jenkins.md)
 

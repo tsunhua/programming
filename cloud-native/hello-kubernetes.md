@@ -90,11 +90,11 @@ Kubernetes （源自古希腊语，意为领航员、舵手，简称 K8S，8 代
 
 Kubernetes 采用主从式架构，一个集群控制节点（Master）和多个工作节点（Node）。包含以下核心组件：
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 图：Kubernetes 核心组件
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 图：Kubernetes 架构（官方）
 
@@ -102,7 +102,7 @@ Kubernetes 采用主从式架构，一个集群控制节点（Master）和多个
 
 图：Kubernetes 架构（AWS）
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 图：Kubernetes 架构（Slide from [this](https://schd.ws/hosted_files/kccnceu18/00/What%20does%20“production%20ready”%20really%20mean%20for%20a%20Kubernetes%20cluster.pdf) presentation from Lucas Käldström \(@kubernetesonarm\)）
 
@@ -110,7 +110,7 @@ Kubernetes 采用主从式架构，一个集群控制节点（Master）和多个
 
 图：Kubernetes 声明式 API 设计
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 图：Kubernetes 架构
 
