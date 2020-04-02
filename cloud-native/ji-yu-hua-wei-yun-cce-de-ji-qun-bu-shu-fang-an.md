@@ -23,19 +23,19 @@
 
 ### 服务选型
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 ### 创建节点
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 ### 安装插件
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2831%29.png)
 
 ### 配置确认
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 ### 完成
 
@@ -62,7 +62,7 @@
 
 登录[CCE控制台](https://console-intl.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 &gt; 集群管理”，单击待连接集群下的“命令行工具 &gt; kubectl”。
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 随后执行以下操作：
 

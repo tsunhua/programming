@@ -90,27 +90,27 @@ Kubernetes （源自古希腊语，意为领航员、舵手，简称 K8S，8 代
 
 Kubernetes 采用主从式架构，一个集群控制节点（Master）和多个工作节点（Node）。包含以下核心组件：
 
-![](../.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 图：Kubernetes 核心组件
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 图：Kubernetes 架构（官方）
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 图：Kubernetes 架构（AWS）
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 图：Kubernetes 架构（Slide from [this](https://schd.ws/hosted_files/kccnceu18/00/What%20does%20“production%20ready”%20really%20mean%20for%20a%20Kubernetes%20cluster.pdf) presentation from Lucas Käldström \(@kubernetesonarm\)）
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 图：Kubernetes 声明式 API 设计
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 图：Kubernetes 架构
 
@@ -118,13 +118,13 @@ Kubernetes 采用主从式架构，一个集群控制节点（Master）和多个
 
 Kubernetes 采用声明式设计，通过 API 对象声明期望的状态（desired state），然后系统会通过控制面（control plane）最终达到期望。
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 图：Kubernetes 对象
 
 ### 基础设施抽象
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 图：基础设施抽象
 

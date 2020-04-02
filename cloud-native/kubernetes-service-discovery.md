@@ -412,7 +412,7 @@ nslookup latte
 * 查询名称带有存根域名后缀的（比如 ".acme.local"），转发到 custom DNS。
 * 查询名称不匹配的（比如 "[widget.com](http://widget.com/)"），转发到 upstream DNS。
 
-![&#x4F7F;&#x7528;CoreDNS&#x5B9E;&#x73B0;Kubernetes&#x57FA;&#x4E8E;DNS&#x7684;&#x670D;&#x52A1;&#x53D1;&#x73B0;\_Kubernetes&#x4E2D;&#x6587;&#x793E;&#x533A;](../.gitbook/assets/image%20%2810%29.png)
+![&#x4F7F;&#x7528;CoreDNS&#x5B9E;&#x73B0;Kubernetes&#x57FA;&#x4E8E;DNS&#x7684;&#x670D;&#x52A1;&#x53D1;&#x73B0;\_Kubernetes&#x4E2D;&#x6587;&#x793E;&#x533A;](../.gitbook/assets/image%20%2819%29.png)
 
 以上配置使用 Kubernetes 的`ConfigMap` 插件，配置如下：
 
