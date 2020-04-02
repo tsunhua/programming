@@ -319,7 +319,7 @@ func add(left int, right int) (result int) {
 
 （以下参考：[Go 切片：用法和本质](https://blog.go-zh.org/go-slices-usage-and-internals)） Go 中使用切片（slice）构建智能的动态数组。切片不存储任何数据，它只是描述了底层数组中的一段无长度的数组。 其结构如下，包括指向数组的指针，片段的长度，和容量（片段的最大长度）。
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 > 注意：底层数据仅在没有切片引用时才会被回收，因此当返回底层数组中的一小段时建议拷贝一段返回。
 

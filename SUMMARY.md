@@ -20,6 +20,7 @@
 * [Istio](cloud-native/istio.md)
 * [Istio 中使用 EnvoyFilter 注入国家二字码的实现](cloud-native/istio-envoy-filter-country-code.md)
 * [Kubernetes 运维指南](cloud-native/kubernetes-yun-wei-zhi-nan.md)
+* [基于华为云 CCE 的集群部署方案](cloud-native/ji-yu-hua-wei-yun-cce-de-ji-qun-bu-shu-fang-an.md)
 
 ## 持续集成和交付 <a id="ci-cd"></a>
 
