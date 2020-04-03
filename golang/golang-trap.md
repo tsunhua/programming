@@ -29,6 +29,22 @@ s := fmt.Sprintf("%d", 97)
 
 ## 切片
 
+### 传递切片要小心内容被改变
+
+```text
+func main() {
+        a := []int{5,6,7,8}
+        fmt.Printf("len: %d cap:%d data:%+v\n", len(a), cap(a), a)
+        test(a)
+        fmt.Printf("len: %d cap:%d data:%+v\n", len(a), cap(a), a)
+}
+
+func test(a []int) {
+        a[0] = 1
+        a = append(a, 10)
+}
+```
+
 ### 切片会导致整个底层数组被锁定
 
 切片会导致整个底层数组被锁定，底层数组无法释放内存。如果底层数组较大会对内存产生很大的压力。
