@@ -85,6 +85,18 @@ func main() {
 }
 ```
 
+### 复制切片时需要注意长度
+
+```go
+func UpdateUserAgeDistribution(from []model.UserAgeDistributionItem, to []model.UserAgeDistributionItem) []model.UserAgeDistributionItem {
+	// wrong! 复制之后 result 仍为空
+	// result := make([]model.UserAgeDistributionItem, 0, len(to))
+
+	result := make([]model.UserAgeDistributionItem, len(to))
+	copy(result, to)
+}
+```
+
 ## 迭代
 
 ### ForRange 迭代返回值先 index/key 后 value
