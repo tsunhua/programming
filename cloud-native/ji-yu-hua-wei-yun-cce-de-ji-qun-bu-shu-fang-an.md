@@ -147,11 +147,13 @@ subjects:
   namespace: kube-system
 EOF
 
-# Select proper Image
+# Init helm（中国大陆）
+## Select proper Image
 docker search tiller
-
-# Init helm
 helm init --service-account tiller --tiller-image=sapcc/tiller:v2.16.1
+
+# Init helm (海外)
+helm init --service-account tiller
 ```
 
 ### 安装 metric
@@ -337,4 +339,10 @@ spec:
           number: 8080
         host: nginx
 ```
+
+## 问题
+
+### 节点无法拉取外网镜像
+
+排查是否设置了 EIP，如果节点没有 EIP，那么无法拉取外网镜像。
 
