@@ -375,7 +375,32 @@ mongorestore -h IP --port 端口 -u 用户名 -p 密码 -d 数据库 --drop bson
 db.copyDatabase("db_to_rename","db_renamed","localhost")
 ```
 
+## 卸载
+
+```bash
+# Stop MongoDB
+sudo service mongod stop
+
+# Remove Packages
+sudo yum erase $(rpm -qa | grep mongodb-org)
+
+# Remove Data Directories
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongo
+```
+
 ## Q&A
+
+### MongoDB 启动失败怎么办？
+
+> 参考：[https://askubuntu.com/questions/823288/mongodb-loads-but-breaks-returning-status-14](https://askubuntu.com/questions/823288/mongodb-loads-but-breaks-returning-status-14)
+
+```bash
+chown -R mongod:mongod /var/lib/mongo
+chown -R mongod:mongod /var/log/mongodb
+chown mongod:mongod /tmp/mongodb-27017.sock
+rm /var/run/mongodb/mongod.pid -f
+```
 
 ### 一个服务中该使用一个还是多个 MongoClient？
 
