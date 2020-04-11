@@ -54,7 +54,7 @@ sudo systemctl start mongod
 sudo systemctl enable mongod
 
 # 修改配置文件/etc/mongod.conf 后需要执行以下语句重载
-sudo systemctl reload mongod
+sudo systemctl restart mongod
 
 # 查看日志
 sudo tail /var/log/mongodb/mongod.log
