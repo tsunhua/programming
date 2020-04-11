@@ -553,6 +553,9 @@ Amazon ECR\(Amazon Elastic Container Registry \) 是完全托管的安全 Docker
 # install go
 wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
+
+# config env in file `~/.bash_profile`
+export PATH=$PATH:/usr/local/go/bin
 ```
 
 随后执行以下命令构建 Go 应用。
