@@ -35,4 +35,5 @@
 ## 数据库
 
 * [MongoDB](shu-ju-ku/mongodb.md)
+* [Redis](shu-ju-ku/redis.md)
 
