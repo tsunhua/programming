@@ -109,6 +109,8 @@ sudo yum install docker-ce
 # Start Docker
 sudo systemctl start docker
 
+sudo usermod -a -G docker root
+
 # Verify by hello-world image
 sudo docker run hello-world
 ```
