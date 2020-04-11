@@ -51,6 +51,8 @@ sudo yum install mongodb-org
 
 sudo systemctl start mongod
 
+sudo systemctl enable mongod
+
 # 修改配置文件/etc/mongod.conf 后需要执行以下语句重载
 sudo systemctl reload mongod
 
