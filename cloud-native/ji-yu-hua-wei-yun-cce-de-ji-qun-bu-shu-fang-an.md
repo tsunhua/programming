@@ -162,14 +162,10 @@ helm init --service-account tiller
 
 ```bash
 # 安装
-helm install metrics-server \
+helm install stable/metrics-server \
     --name metrics-server \
-    --version 2.8.8 \
+    --version 2.11.0 \
     --namespace metrics
-# 修改镜像仓库
-kubectl  edit deploy metrics-server -n metrics
-随后将镜像地址更改为
-ygqygq2/metrics-server
 # 验证
 kubectl get apiservice v1beta1.metrics.k8s.io -o yaml
 ```
@@ -178,33 +174,14 @@ kubectl get apiservice v1beta1.metrics.k8s.io -o yaml
 
 ```bash
 # 下载 istio 并配置环境变量
-export ISTIO_VERSION=1.3.4
-curl -L https://git.io/getLatestIstio | sh -
+export ISTIO_VERSION=1.5.1
+https://istio.io/downloadIstio sh -
 cd istio-$ISTIO_VERSION
-export ISTIO_HOME=$PWD
-export PATH=$ISTIO_HOME/bin:$PATH
+export PATH=$PWD/bin:$PATH
 
-# 创建命名空间 istio-system
-kubectl create namespace istio-system
+# 安装 istio
+ istioctl manifest apply --set profile=default --set addonComponents.prometheus.enabled=false
 
-# 安装 istio 的的相关 Custom Resource Definitions(CRDs)
-helm install $ISTIO_HOME/install/kubernetes/helm/istio-init --name istio-init --namespace istio-system
-
-# 当执行以下指令输出 23 时即安装完毕
-kubectl get crds | grep 'istio.io' | wc -l
-
-# 修改 $ISTIO_HOME/install/kubernetes/helm/istio/charts/gateways/values.yaml，添加以下注解
-kubernetes.io/elb.class: union
-kubernetes.io/session-affinity-mode: SOURCE_IP
-kubernetes.io/elb.id: 55c01aa1-b1bb-4b15-84dd-dd08dbe08efc
-# 关于 LB 的细节见下文 ”负载均衡“
-
-# 开始安装 istio
-helm install $ISTIO_HOME/install/kubernetes/helm/istio \
-              --name istio \
-              --namespace istio-system \
-              --set pilot.env.PILOT_INBOUND_PROTOCOL_DETECTION_TIMEOUT=0s \
-              --set global.proxy.protocolDetectionTimeout=0
 
 # 确认 istio 安装情况
 kubectl get svc -n istio-system
