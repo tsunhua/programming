@@ -180,11 +180,18 @@ cd istio-$ISTIO_VERSION
 export PATH=$PWD/bin:$PATH
 
 # 安装 istio
- istioctl manifest apply --set profile=default --set addonComponents.prometheus.enabled=false
+istioctl manifest apply --set profile=default --set addonComponents.prometheus.enabled=false
 
+# 修改 $ISTIO_HOME/install/kubernetes/helm/istio/charts/gateways/values.yaml，添加以下注解
+kubernetes.io/elb.class: union
+kubernetes.io/session-affinity-mode: 114.119.180.209
+kubernetes.io/elb.id: 2a92f374-811f-4faf-b28e-4f51f16596ab
 
 # 确认 istio 安装情况
 kubectl get svc -n istio-system
+
+# 查看事件
+kubectl  get event -n istio-system --sort-by="{.lastTimestamp}"
 ```
 
 ## 负载均衡
