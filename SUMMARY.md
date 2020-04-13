@@ -25,6 +25,7 @@
 
 ## 持续集成和交付 <a id="ci-cd"></a>
 
+* [Git](ci-cd/git.md)
 * [Jenkins](ci-cd/jenkins.md)
 
 ## Java 编程 <a id="java-program"></a>
