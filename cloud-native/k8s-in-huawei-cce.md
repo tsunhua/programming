@@ -210,13 +210,12 @@ kubectl  get event -n istio-system --sort-by="{.lastTimestamp}"
 
 参见：[https://support-intl.huaweicloud.com/zh-cn/usermanual-cce/cce\_01\_0111.html](https://support-intl.huaweicloud.com/zh-cn/usermanual-cce/cce_01_0111.html)
 
+针对 1.15 版本的 Kubernetes，配置如下：
+
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  annotations:
-    volume.beta.kubernetes.io/storage-class: nfs-rw
-    volume.beta.kubernetes.io/storage-provisioner: flexvolume-huawei.com/fuxinfs
   name: pvc-sfs-example
   namespace: default
 spec:
@@ -225,8 +224,27 @@ spec:
   resources:
     requests:
       storage: 10Gi
+  storageClassName: csi-nas
   volumeName: pv-sfs-example
-  volumeNamespace: default
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-sfs-example
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  csi:
+    driver: nas.csi.everest.io
+    fsType: nfs
+    volumeAttributes:
+      everest.io/share-export-location: sfs-nas01.cn-north-7.ulanqab.huawei.com:/share-436304e8
+      storage.kubernetes.io/csiProvisionerIdentity: everest-csi-provisioner
+    volumeHandle: 682f00bb-ace0-41d8-9b3e-913c9aa6b695
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: csi-nas
 ```
 
 ## 部署示例：nginx
