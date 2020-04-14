@@ -210,6 +210,25 @@ kubectl  get event -n istio-system --sort-by="{.lastTimestamp}"
 
 参见：[https://support-intl.huaweicloud.com/zh-cn/usermanual-cce/cce\_01\_0111.html](https://support-intl.huaweicloud.com/zh-cn/usermanual-cce/cce_01_0111.html)
 
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    volume.beta.kubernetes.io/storage-class: nfs-rw
+    volume.beta.kubernetes.io/storage-provisioner: flexvolume-huawei.com/fuxinfs
+  name: pvc-sfs-example
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  volumeName: pv-sfs-example
+  volumeNamespace: default
+```
+
 ## 部署示例：nginx
 
 ```yaml
