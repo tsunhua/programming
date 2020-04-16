@@ -195,6 +195,12 @@ git clone --recursive [Git仓库地址]
 
 ## 问题
 
+### 清除本地分支
+
+```bash
+git fetch -p
+```
+
 ### Server does not allow request for unadvertised object
 
 日志：
