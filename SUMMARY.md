@@ -42,7 +42,7 @@
 
 * [Linux](cao-zuo-xi-tong/linux.md)
 
-## 编程之外
+## 编程之外 <a id="beyond-programming"></a>
 
-* [让 Mac 生产力加倍的几款软件](bian-cheng-zhi-wai/rang-mac-sheng-chan-li-jia-bei-de-ji-kuan-ruan-jian.md)
+* [让 Mac 生产力加倍的几款软件](beyond-programming/mac-apps.md)
 
