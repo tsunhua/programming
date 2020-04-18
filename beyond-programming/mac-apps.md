@@ -40,7 +40,11 @@
     </tr>
     <tr>
       <td style="text-align:left">NewFileMenu</td>
-      <td style="text-align:left">&#x5B9E;&#x73B0;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;</td>
+      <td style="text-align:left">
+        <p>&#x5B9E;&#x73B0;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;</p>
+        <p>&#x5730;&#x5740;&#xFF1A;<a href="https://langui.net/new-file-menu/">https://langui.net/new-file-menu/</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">AppCleaner</td>
@@ -114,8 +118,12 @@
     </tr>
     <tr>
       <td style="text-align:left">Typora</td>
-      <td style="text-align:left">&#x7B80;&#x6D01;&#x9AD8;&#x6548;&#x7684;&#x6240;&#x89C1;&#x5373;&#x6240;&#x5F97;&#x7684;
-        Markdown &#x5199;&#x4F5C;&#x5DE5;&#x5177;</td>
+      <td style="text-align:left">
+        <p>&#x7B80;&#x6D01;&#x9AD8;&#x6548;&#x7684;&#x6240;&#x89C1;&#x5373;&#x6240;&#x5F97;&#x7684;
+          Markdown &#x5199;&#x4F5C;&#x5DE5;&#x5177;</p>
+        <p>&#x5730;&#x5740;&#xFF1A;<a href="https://typora.io/">https://typora.io/</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">EverNote
@@ -136,7 +144,11 @@
         <p>TickTick</p>
         <p>&#x6EF4;&#x7B54;&#x6E05;&#x5355;</p>
       </td>
-      <td style="text-align:left">&#x90E8;&#x5206;&#x514D;&#x8D39;&#x57FA;&#x672C;&#x591F;&#x7528;&#x7684;&#x5F85;&#x529E;&#x5DE5;&#x5177;</td>
+      <td style="text-align:left">
+        <p>&#x90E8;&#x5206;&#x514D;&#x8D39;&#x57FA;&#x672C;&#x591F;&#x7528;&#x7684;&#x5F85;&#x529E;&#x5DE5;&#x5177;</p>
+        <p>&#x5730;&#x5740;&#xFF1A;<a href="https://ticktick.com/about/download">https://ticktick.com/about/download</a>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">Microsoft To Do</td>
