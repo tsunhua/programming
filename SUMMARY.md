@@ -28,19 +28,19 @@
 * [Git](ci-cd/git.md)
 * [Jenkins](ci-cd/jenkins.md)
 
-## Java 编程 <a id="java-program"></a>
+## Java 编程 <a id="java"></a>
 
-* [Java](java-program/java.md)
-* [Spring & Spring Boot](java-program/spring-and-spring-boot.md)
+* [Java](java/java.md)
+* [Spring & Spring Boot](java/spring-and-spring-boot.md)
 
-## 数据库
+## 数据库 <a id="db"></a>
 
-* [MongoDB](shu-ju-ku/mongodb.md)
-* [Redis](shu-ju-ku/redis.md)
+* [MongoDB](db/mongodb.md)
+* [Redis](db/redis.md)
 
-## 操作系统
+## 操作系统 <a id="os"></a>
 
-* [Linux](cao-zuo-xi-tong/linux.md)
+* [Linux](os/linux.md)
 
 ## 编程之外 <a id="beyond-programming"></a>
 
