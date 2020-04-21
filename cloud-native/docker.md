@@ -226,6 +226,12 @@ docker build -t nginx:v3 .
 
 > 注意：Dockerfile 每个指令都会建立一层，Union FS 有最大层数限制。多个命令行指令可以使用 `&&` 串联。
 
+#### （3）COPY
+
+复制文件或文件夹。语法：`COPY [--chown=<user>:<group>] <src>... <dest>`
+
+> 注意：执行 `COPY assets ./` 时会复制 `assets` 文件夹中的文件到当前 `WORKDIR` 而不是 `WORKDIR/assets`。正确的写法是： `COPY assets ./assets`
+
 ## Docker Compose
 
 [Docker Compose](https://github.com/docker/compose) 是 Docker 官方的开源项目之一，用来快速地部署分布式应用。官方定位是「**定义和运行多个 Docker 容器的应用**（Defining and running multi-container Docker applications）」。衍生概念有：
