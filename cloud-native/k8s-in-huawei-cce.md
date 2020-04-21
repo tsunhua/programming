@@ -197,6 +197,40 @@ kubectl  get event -n istio-system --sort-by="{.lastTimestamp}"
 istioctl manifest apply --set profile=default --set addonComponents.prometheus.enabled=false  --set values.global.proxy.accessLogFile="/dev/stdout"
 ```
 
+### 暴露 gRPC 端口
+
+执行`kubectl edit svc istio-ingressgateway -n istio-system` 在 `spec.ports` 处添加以下配置以开放 6565 端口作为 gRPC 端口。
+
+```yaml
+  - name: grpc
+    port: 6565
+    protocol: TCP
+    targetPort: 6565
+```
+
+Service 按以下配置即可使用到该端口：
+
+```yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-app
+  namespace: default
+  labels:
+    app: my-app
+spec:
+  ports:
+    - name: grpc
+      protocol: TCP
+      port: 6565
+      targetPort: 6565
+  selector:
+    app: my-app
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+```
+
 ## 负载均衡
 
 参考[官方文档](https://support.huaweicloud.com/api-cce/cce_02_0087.html)，需要在 Service 中的 annotations 处添加以下注解：
