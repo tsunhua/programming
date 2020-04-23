@@ -41,6 +41,7 @@
 ## 操作系统 <a id="os"></a>
 
 * [Linux](os/linux.md)
+* [Shell](os/shell.md)
 
 ## 编程之外 <a id="beyond-programming"></a>
 
