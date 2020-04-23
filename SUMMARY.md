@@ -9,6 +9,7 @@
 * [Go 编程之陷阱](golang/golang-trap.md)
 * [Go 编程之规范](golang/golang-standard.md)
 * [Go 编程之最佳实践](golang/golang-best-practice.md)
+* [Go 中使用 ProtoBuf](golang/go-protobuf.md)
 
 ## 云原生 <a id="cloud-native"></a>
 
