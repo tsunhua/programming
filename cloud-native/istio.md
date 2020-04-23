@@ -395,9 +395,9 @@ kubectl label pods my-pod version=v2 --overwrite
 
 接下来，不断访问我们的 testrpc 服务，然后观察 Kiali Dashboard 就可以看到如下的图像。流量有时经过 v2 的 Pod，有时经过 v1 的 Pod，而 testrpcc 只有一个 Pod 且只建立了一次连接，随后的请求均衡地负载到 testrpc 服务中的两个 Pod 中。
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
 ## 参考
 

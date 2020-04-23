@@ -733,7 +733,7 @@ kubectl set image deployments/${APP} ${APP}=${DOCKER_REPO}/${APP}:${IMAGE_TAG} -
 
 **采用 Jenkins +** [**Git Parameter Plugin**](https://wiki.jenkins.io/display/JENKINS/Git+Parameter+Plugin) **+ Gitlab 进行 CI/CD，当通过 Jenkins Dashboard 发出构建请求后，打包机会执行上述容器化过程（即构建应用、构建镜像、发布镜像和部署服务）。**整个过程可用下面的时序图表示：
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
 ### 相关原理
 
@@ -1577,7 +1577,7 @@ spec:
 
 **2.4）查看 Kiali Dashboard**
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](../.gitbook/assets/image%20%2836%29.png)
 
 ## 灰度发布
 
@@ -1728,7 +1728,7 @@ spec:
 
 **采用 EFK 方案，在集群的每个节点部署一个 Fluent Bit，负责收集日志转发到 Fluentd，Fluentd 处理完数据后路由到多个不同的输出节点（比如 ElasticSearch、S3）**。数据流图如下：
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2830%29.png)
 
 图片来源：[Fluentd vs. Fluent Bit: Side by Side Comparison - logz.io](https://logz.io/blog/fluentd-vs-fluent-bit/)
 
@@ -2172,7 +2172,7 @@ kubectl logs counter count
 
 （2）通过 Kibana 查看日志。
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 ## 服务调用追踪
 
@@ -2243,7 +2243,7 @@ kubectl -n istio-system port-forward --address 0.0.0.0  $(kubectl -n istio-syste
 
 **3.4）查找追踪信息**
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 **3.5）查看追踪的详情**
 
@@ -2259,7 +2259,7 @@ kubectl -n istio-system port-forward --address 0.0.0.0  $(kubectl -n istio-syste
 
 效果图如下：
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 ### 相关原理
 
