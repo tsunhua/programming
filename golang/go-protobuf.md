@@ -21,7 +21,17 @@
 go get github.com/favadi/protoc-go-inject-tag
 ```
 
-（2）对 protoc 编译生成的文件执行以下命令
+（2）在 .proto 中使用 @inject\_tag 注释
+
+```bash
+message User {
+    string id = 1;
+    // @inject_tag: bson:"companyId"
+    string companyId = 3;
+}
+```
+
+（3）运行 `protoc` 进行编译后对生成的文件执行以下命令
 
 ```bash
 protoc-go-inject-tag -input=/for/bar.pb.go
