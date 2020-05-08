@@ -162,6 +162,7 @@ helm init --service-account tiller
 
 ```bash
 # 安装
+helm repo update
 helm install stable/metrics-server \
     --name metrics-server \
     --version 2.11.0 \
@@ -175,7 +176,7 @@ kubectl get apiservice v1beta1.metrics.k8s.io -o yaml
 ```bash
 # 下载 istio 并配置环境变量
 export ISTIO_VERSION=1.5.1
-https://istio.io/downloadIstio sh -
+curl -L https://istio.io/downloadIstio | sh -
 cd istio-$ISTIO_VERSION
 export PATH=$PWD/bin:$PATH
 
