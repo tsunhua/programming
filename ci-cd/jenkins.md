@@ -96,6 +96,12 @@ sudo service jenkins restart
 * [ ] 进入`首页 --> 系统管理 --> Configure Global Security`，勾选`启用安全`，点选`Jenkins专有用户数据库`，并点击`保存`
 * [ ] 进入`首页-->系统管理--> 管理用户`，点击进入修改密码页面，并重新登录
 
+### 如何更新 Jenkins？
+
+```bash
+sudo yum update jenkins
+```
+
 ### 参考
 
 1. [Meet Jenkins – wiki.jenkins.io](https://wiki.jenkins.io/display/JENKINS/Meet+Jenkins)
