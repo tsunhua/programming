@@ -358,6 +358,11 @@ kubectl version
 }
 ```
 
+> 最近在 aws 上创建 1.15 的 k8s 时发现还需要以下权限：
+>
+> * iam:listAttachedRolePolicies
+> * ssm:GetParameter
+
 #### （2）使用构建配置文件构建
 
 **2.1）准备如下配置文件**
