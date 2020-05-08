@@ -68,6 +68,35 @@ sudo service jenkins restart
 
 假定新建了名为 `projectA` 的 Jenkins 任务，当执行 Jenkins 构建时，其工作目录位于 `/var/lib/jenkins/workspace/projectA`。
 
+### 忘记密码怎么办？
+
+\(1\) 删除安全配置
+
+```bash
+$ vim /var/lib/jenkins
+# 删除以下代码
+<useSecurity>true</useSecurity>  
+<authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">  
+  <denyAnonymousReadAccess>true</denyAnonymousReadAccess>  
+</authorizationStrategy>  
+<securityRealm class="hudson.security.HudsonPrivateSecurityRealm">  
+  <disableSignup>true</disableSignup>  
+  <enableCaptcha>false</enableCaptcha>  
+</securityRealm> 
+```
+
+（2）重启 Jenkins
+
+```bash
+sudo service jenkins restart
+```
+
+（3）重新配置用户密码
+
+* [ ] 进入`首页 --> 系统管理 --> Configure Global Security`，勾选`启用安全`
+* [ ] 点选`Jenkins专有用户数据库`，并点击`保存`
+* [ ] 重新进入`首页-->系统管理--> 用户列表`，点击进入修改密码页面，并重新登录
+
 ### 参考
 
 1. [Meet Jenkins – wiki.jenkins.io](https://wiki.jenkins.io/display/JENKINS/Meet+Jenkins)
