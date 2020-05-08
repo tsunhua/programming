@@ -73,7 +73,7 @@ sudo service jenkins restart
 \(1\) 删除安全配置
 
 ```bash
-$ vim /var/lib/jenkins
+$ vim /var/lib/jenkins/config.xml
 # 删除以下代码
 <useSecurity>true</useSecurity>  
 <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">  
