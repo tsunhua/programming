@@ -1,5 +1,45 @@
 # Shell
 
+## screen
+
+（1）安装
+
+```bash
+# install package ncurses-devel
+sudo yum install ncurses-devel
+# install new version screen
+wget https://ftp.gnu.org/gnu/screen/screen-4.6.0.tar.gz
+tar -xzf screen-4.6.0.tar.gz
+cd screen-4.6.0
+sh ./configure
+make
+cp screen /usr/bin
+```
+
+（2）使用示例，部署 Go 服务
+
+```bash
+#!/bin/bash -e
+echo "Selected Code Branch：$GIT_BRANCH"
+echo "Building Go SERVER"
+go build -v
+
+echo "Deploy Server"
+cd ..
+COMMAND_GO_SERVER=./ec-solution/app
+go_server_pid=`pidof ${COMMAND_GO_SERVER}`
+if [  $go_server_pid ]
+ then
+      date +"%Y/%m/%d %H:%M:%S-Go Server Restart"
+      kill -9 $go_server_pid
+      sudo screen -d -m -L -Logfile ./log/ec-solution.log ${COMMAND_GO_SERVER}
+      date +"%Y/%m/%d %H:%M:%S-Restart completed"
+else
+      sudo screen -d -m -L -Logfile ./log/ec-solution.log ${COMMAND_GO_SERVER}
+       date +"%Y/%m/%d %H:%M:%S-Start completed"
+fi
+```
+
 ## 传递参数
 
 shell 传递参数时 ${1} 才是第一个参数，${0} 是其命令本身。
