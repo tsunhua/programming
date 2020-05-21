@@ -2,7 +2,14 @@
 
 ## screen
 
+GNU Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。
+
 （1）安装
+
+参考：
+
+1. [https://superuser.com/questions/681490/install-screen-from-source-code](https://superuser.com/questions/681490/install-screen-from-source-code)
+2. [https://www.gnu.org/software/screen/manual/html\_node/Compiling-Screen.html\#Compiling-Screen](https://www.gnu.org/software/screen/manual/html_node/Compiling-Screen.html#Compiling-Screen)
 
 ```bash
 # install package ncurses-devel
