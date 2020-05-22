@@ -56,6 +56,16 @@
       <td style="text-align:left"><a href="https://v1-13.docs.kubernetes.io/zh/docs/">https://v1-13.docs.kubernetes.io/zh/docs/</a>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">Run K8S everywhere</td>
+      <td style="text-align:left"><a href=" https://docs.rancher.cn/rancher2x/">https://docs.rancher.cn/rancher2x/</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#x5728;&#x672C;&#x5730;&#x5B89;&#x88C5; k8s</td>
+      <td style="text-align:left"><a href="https://github.com/opsnull/follow-me-install-kubernetes-cluster">https://github.com/opsnull/follow-me-install-kubernetes-cluster</a>
+      </td>
+    </tr>
   </tbody>
 </table>## 文稿
 
