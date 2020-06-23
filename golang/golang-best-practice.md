@@ -135,7 +135,9 @@ func watchVipMovie2(user User) (url string, err error) {
         module&#xFF0C;&#x5E76;&#x542F;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;go.mod&#x8BB0;&#x5F55;module&#x7684;&#x5143;&#x4FE1;&#x606F;&#x3002;</td>
     </tr>
   </tbody>
-</table>启用 Go modules 的方式：设定环境变量 `export GO111MODULE=on`
+</table>
+
+启用 Go modules 的方式：设定环境变量 `export GO111MODULE=on`
 
 参考：
 

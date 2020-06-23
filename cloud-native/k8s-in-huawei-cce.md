@@ -194,7 +194,7 @@ kubectl get svc -n istio-system
 # 查看事件
 kubectl  get event -n istio-system --sort-by="{.lastTimestamp}"
 
-# 启用 envoy 日志
+# 启用 envoy 日志（！！当且仅当调试时启用）
 istioctl manifest apply --set profile=default --set addonComponents.prometheus.enabled=false  --set values.global.proxy.accessLogFile="/dev/stdout"
 ```
 
